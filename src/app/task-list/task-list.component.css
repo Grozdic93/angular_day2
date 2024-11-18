@@ -1,0 +1,32 @@
+section{
+    width: 600px;
+    margin: 4rem auto;
+    border: 2px solid rebeccapurple;
+    padding: 2rem;
+    min-height: 40vh;
+}
+
+.container h2{
+    text-align: center;
+}
+.container ul{
+    text-align: center;
+    list-style: none;
+    padding: 0;
+}
+
+form{
+    display: grid;
+    grid-auto-flow: row;
+    gap: 1rem;
+}
+
+input.ng-invalid.ng-touched{
+    border: 1px solid red;
+}
+
+.error{
+    color: red;
+    font-size: .9rem;
+   
+}

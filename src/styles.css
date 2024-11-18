@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+button{
+    background-color: rebeccapurple;
+    padding: 1rem;
+    border: none;
+    font-size: 1.2rem;
+    color: white;
+    cursor: pointer;
+}
+button:disabled{
+    background-color: rgb(65, 53, 78);
+    color: rgb(153, 153, 153);
+    cursor: not-allowed;
+}

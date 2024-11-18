@@ -1,0 +1,38 @@
+
+<section class="form-container">
+    <h3>Add Items to Shopping List</h3>
+    <form [formGroup]="taskForm" (ngSubmit)="onFormSubmit()">
+        <label for="item">Item:</label>
+        <input formControlName="item_name" id="item" type="text">
+        <span
+        *ngIf="name.hasError('required') && (name.dirty || name.touched)"
+         class="error">Item is required!</span>
+        <label for="amount">Amount:</label>
+        
+        
+        <input formControlName="amount" id="amount" type="number">
+        <div *ngIf="amount.invalid && (amount.dirty || amount.touched)">
+            <span *ngIf="amount.hasError('required')" class="error">Amount is required!</span>
+   
+           <span *ngIf="amount.hasError('min')" class="error">Amount cannot be smaller then 1</span>
+   
+           </div>
+        <button [disabled]="taskForm.invalid" type="submit">Add To List</button>
+    </form>
+</section>
+<section class="container">
+    <h2>Shopping List:</h2>
+
+    <!-- <ul>
+        <li *ngFor="let item of shoppingListItems; index as i">{{ item.name }} - {{ item.amount }} , index: {{i}}</li>
+        
+    </ul> -->
+
+    <ul>
+            @for(item of shoppingListItems; track $index){
+                <li>{{ item.name }} => {{ item.amount }}</li>
+        
+            }
+    </ul>
+</section>
+
